@@ -8,8 +8,10 @@ public class Calculator {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Which operation to perform: ");
         System.out.println("1. Sum");
-        System.out.println("2. Sub");
+        System.out.println("2. Subtraction");
+        System.out.println("0. Exit");
         int operationNumber = Integer.parseInt(reader.readLine());
+        if (operationNumber == 0) System.exit(0);
         System.out.println("Input first number: ");
         double firstNumber = Double.parseDouble(reader.readLine());
         System.out.println("Input second number: ");
@@ -18,9 +20,11 @@ public class Calculator {
         switch (operationNumber) {
             case 1:
                 System.out.println(sum(firstNumber, secondNumber));
+                run();
                 break;
             case 2:
                 System.out.println(subtraction(firstNumber, secondNumber));
+                run();
                 break;
             default:
                 System.out.println("Operation number is not supported.");
@@ -29,10 +33,12 @@ public class Calculator {
     }
 
     private double sum(double firstNumber, double secondNumber) {
+
         return firstNumber + secondNumber;
     }
 
     private double subtraction(double firstNumber, double secondNumber) {
+
         return firstNumber - secondNumber;
     }
 }
