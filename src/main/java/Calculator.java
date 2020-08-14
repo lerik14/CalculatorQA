@@ -18,21 +18,21 @@ public class Calculator {
         switch (operationNumber) {
             case 1:
                 System.out.println(sum(firstNumber, secondNumber));
-            break;
+                break;
             case 2:
-                System.out.println(sub(firstNumber, secondNumber));
-            break;
+                System.out.println(subtraction(firstNumber, secondNumber));
+                break;
             default:
-                System.out.println("Invalid number");
+                System.out.println("Operation number is not supported.");
                 break;
         }
     }
 
-
     private double sum(double firstNumber, double secondNumber) {
         return firstNumber + secondNumber;
     }
-    private double sub(double firstNumber, double secondNumber) {
+
+    private double subtraction(double firstNumber, double secondNumber) {
         return firstNumber - secondNumber;
     }
 }
