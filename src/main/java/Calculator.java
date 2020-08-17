@@ -20,25 +20,22 @@ public class Calculator {
         switch (operationNumber) {
             case 1:
                 System.out.println(sum(firstNumber, secondNumber));
-                run();
                 break;
             case 2:
                 System.out.println(subtraction(firstNumber, secondNumber));
-                run();
                 break;
             default:
                 System.out.println("Operation number is not supported.");
                 break;
         }
+        run();
     }
 
     private double sum(double firstNumber, double secondNumber) {
-
         return firstNumber + secondNumber;
     }
 
     private double subtraction(double firstNumber, double secondNumber) {
-
         return firstNumber - secondNumber;
     }
 }
