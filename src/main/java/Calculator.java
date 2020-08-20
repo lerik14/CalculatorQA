@@ -31,11 +31,11 @@ public class Calculator {
         run();
     }
 
-    private double sum(double firstNumber, double secondNumber) {
+    public double sum(double firstNumber, double secondNumber) {
         return firstNumber + secondNumber;
     }
 
-    private double subtraction(double firstNumber, double secondNumber) {
+    public double subtraction(double firstNumber, double secondNumber) {
         return firstNumber - secondNumber;
     }
 }
