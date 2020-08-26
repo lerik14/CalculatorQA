@@ -5,12 +5,12 @@ import junitparams.*;
 import static org.assertj.core.api.Assertions.*;
 
 @RunWith(JUnitParamsRunner.class)
-public class CalculatorDDT {
+public class SimpleOperationsTests {
 
     @Test
     @Parameters(method = "sumTestsData")
     public void sumTests(double firstNumber, double secondNumber, double expectedResult, String operationDescription) {
-        Calculator calc = new Calculator();
+        SimpleOperations calc = new SimpleOperations();
         assertThat(calc.sum(firstNumber, secondNumber))
                 .as(operationDescription)
                 .isCloseTo(expectedResult, within(0.000001));
@@ -32,7 +32,7 @@ public class CalculatorDDT {
     @Test
     @Parameters(method = "subtractionTestsData")
     public void subtractionTests(double firstNumber, double secondNumber, double expectedResult, String operationDescription) {
-        Calculator calc = new Calculator();
+        SimpleOperations calc = new SimpleOperations();
         assertThat(calc.subtraction(firstNumber, secondNumber))
                 .as(operationDescription)
                 .isCloseTo(expectedResult, within(0.000001));

@@ -2,8 +2,8 @@ import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class CalculatorTests {
-    private final Calculator calc = new Calculator();
+public class CalculatorOldTests {
+    private final SimpleOperations calc = new SimpleOperations();
 
     @Test
     public void sumOfTwoPositiveIntNumbersTest() {
