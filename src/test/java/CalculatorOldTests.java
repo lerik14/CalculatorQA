@@ -55,7 +55,7 @@ public class CalculatorOldTests {
 
     @Test
     public void subtractionOfTwoPositiveIntNumbersTest() {
-        double subtractionResult = calc.subtraction(5, 3);
+        double subtractionResult = calc.subtract(5, 3);
         assertThat(subtractionResult)
                 .as("Should return the subtraction of two positive numbers without fractional part")
                 .isEqualTo(2.0);
@@ -63,7 +63,7 @@ public class CalculatorOldTests {
 
     @Test
     public void subtractionOfTwoNegativeIntNumbersTest() {
-        double subtractionResult = calc.subtraction(-5, -3);
+        double subtractionResult = calc.subtract(-5, -3);
         assertThat(subtractionResult)
                 .as("Should return the subtraction of two negative numbers without fractional part")
                 .isEqualTo(-2);
@@ -71,7 +71,7 @@ public class CalculatorOldTests {
 
     @Test
     public void subtractionOfOneNegativeOnePositiveIntNumbersTest() {
-        double subtractionResult = calc.subtraction(-5, 3);
+        double subtractionResult = calc.subtract(-5, 3);
         assertThat(subtractionResult)
                 .as("Should return the subtraction of One Negative and One Positive numbers without fractional part")
                 .isEqualTo(-8);
@@ -79,7 +79,7 @@ public class CalculatorOldTests {
 
     @Test
     public void subtractionOfTwoPositiveDoubleNumbersTest() {
-        double subtractionResult = calc.subtraction(5.8, 3.2);
+        double subtractionResult = calc.subtract(5.8, 3.2);
         assertThat(subtractionResult)
                 .as("Should return the subtraction of two positive numbers with fractional part")
                 .isEqualTo(2.6);
@@ -87,7 +87,7 @@ public class CalculatorOldTests {
 
     @Test
     public void subtractionOfTwoNegativeDoubleNumbersTest() {
-        double subtractionResult = calc.subtraction(-5.6, -3.4);
+        double subtractionResult = calc.subtract(-5.6, -3.4);
         assertThat(subtractionResult)
                 .as("Should return the subtraction of two negative numbers with fractional part")
                 .isEqualTo(-2.2);
@@ -95,7 +95,7 @@ public class CalculatorOldTests {
 
     @Test
     public void subtractionOfOneNegativeOnePositiveDoubleNumbersTest() {
-        double subtractionResult = calc.subtraction(-5.54, 3.23);
+        double subtractionResult = calc.subtract(-5.54, 3.23);
         assertThat(subtractionResult)
                 .as("Should return the subtraction of One Negative and One Positive numbers with fractional part")
                 .isEqualTo(-8.77);
