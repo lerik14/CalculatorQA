@@ -102,13 +102,6 @@ public class CalculatorOldTests {
     }
 
     @Test
-    public void doubleOverflowExceptionTest() {
-        assertThatExceptionOfType(ArithmeticException.class)
-                .as("Should return arithmetic exception when double overflow")
-                .isThrownBy(() -> calc.sum(Double.MAX_VALUE, Double.MAX_VALUE));
-    }
-
-    @Test
     public void sumOfDoubleValueAndZero() {
         double sumResult = calc.sum(5.234567, 0);
         assertThat(sumResult)

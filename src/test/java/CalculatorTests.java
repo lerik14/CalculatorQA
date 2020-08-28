@@ -48,14 +48,4 @@ public class CalculatorTests {
                 new Object[]{5.234567, 0, 5.234567, "The same number must be returned from which zero is subtracted"}
         };
     }
-
-    @Test
-    public void doubleOverflowExceptionTest() {
-        assertThatExceptionOfType(ArithmeticException.class)
-                .as("Should return arithmetic exception when double overflow")
-                .isThrownBy(() -> {
-                    Calculator calc = new Calculator();
-                    calc.sum(Double.MAX_VALUE, Double.MAX_VALUE);
-                });
-    }
 }

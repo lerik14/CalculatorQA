@@ -32,11 +32,7 @@ public class Calculator {
     }
 
     public double sum(double firstNumber, double secondNumber) {
-        double result = firstNumber + secondNumber;
-        if (result == Double.POSITIVE_INFINITY || result ==Double.NEGATIVE_INFINITY) {
-            throw new ArithmeticException("Double overflow");
-        }
-        return result;
+        return firstNumber + secondNumber;
     }
 
     public double subtraction(double firstNumber, double secondNumber) {
