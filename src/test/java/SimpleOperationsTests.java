@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.*;
 @RunWith(JUnitParamsRunner.class)
 public class SimpleOperationsTests {
 
-    SimpleOperations calc = new SimpleOperations();
+    private final SimpleOperations calc = new SimpleOperations();
 
     @Test
     @Parameters(method = "sumTestsData")
@@ -25,7 +25,7 @@ public class SimpleOperationsTests {
                 new Object[]{3.6, 5.35, 8.95, "Should return the sum of two positive numbers with a fractional part"},
                 new Object[]{-3.5, -5.9, -9.4, "Should return the sum of two negative numbers with a fractional part"},
                 new Object[]{3.57, -5.33, -1.76, "Should return the sum of one positive and one negative numbers with a fractional part"},
-                new Object[]{5, 0, 5, "The same number should be returned which is added with zero"}
+                new Object[]{5, 0, 5, "Should return the same number which is added with zero"}
         };
     }
 
@@ -45,7 +45,8 @@ public class SimpleOperationsTests {
                 new Object[]{5.8, 3.2, 2.6, "Should return the subtraction of two positive numbers with a fractional part"},
                 new Object[]{-5.6, -3.4, -2.2, "Should return the subtraction of two negative numbers with a fractional part"},
                 new Object[]{-5.54, 3.23, -8.77, "Should return the subtraction of One Negative and One Positive numbers with a fractional part"},
-                new Object[]{5.234567, 0, 5.234567, "The same number must be returned from which zero is subtracted"}
+                new Object[]{5.234567, 0, 5.234567, "Should return the same number from which zero is subtracted"},
+                new Object[]{0, 5.234567, -5.234567, "Should return the same number that is subtracted from zero with negative sign"}
         };
     }
 
@@ -65,7 +66,27 @@ public class SimpleOperationsTests {
                 new Object[]{5.8, 3.2, 18.56, "Should return the positive multiply of two positive numbers with a fractional part"},
                 new Object[]{-5.8, -3.2, 18.56, "Should return the positive multiply of two negative numbers with a fractional part"},
                 new Object[]{-5.54, 3.23, -17.8942, "Should return the negative multiply of one negative and one positive numbers with a fractional part"},
-                new Object[]{5.234567, 0, 0, "Zero must be returned if number and zero passed"}
+                new Object[]{5.234567, 0, 0, "Should return zero if number and zero passed"}
+        };
+    }
+
+    @Test
+    @Parameters(method = "divideTestsData")
+    public void divideTests(double firstNumber, double secondNumber, double expectedResult, String operationDescription) {
+        assertThat(calc.divide(firstNumber, secondNumber))
+                .as(operationDescription)
+                .isCloseTo(expectedResult, within(0.00001));
+    }
+
+    private Object[] divideTestsData() {
+        return new Object[]{
+                new Object[]{10, 2, 5, "Should return the quotient of two positive numbers without a fractional part"},
+                new Object[]{-10, 2, -5, "Should return the negative quotient of negative dividend and positive divisor without a fractional part"},
+                new Object[]{10, -2, -5, "Should return the negative quotient of positive dividend and negative divisor without a fractional part"},
+                new Object[]{-10, -2, 5, "Should return the positive quotient of negative dividend and negative divisor without a fractional part"},
+                new Object[]{10.567, 3.678, 2.87303, "Should return the quotient of two positive numbers with a fractional part"},
+                new Object[]{0, 23435.45, 0, "Should return zero if dividend is zero"},
+                new Object[]{2.654, 0, Double.POSITIVE_INFINITY, "Should return Infinity is divisor is zero"}
         };
     }
 }

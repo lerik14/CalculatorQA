@@ -4,19 +4,16 @@ import java.io.InputStreamReader;
 
 public class Calculator {
 
-    private SimpleOperations simpleOperations = new SimpleOperations();
-    private TrigonometricOperations trigonometricOperations = new TrigonometricOperations();
+    private final SimpleOperations simpleOperations = new SimpleOperations();
+    private final TrigonometricOperations trigonometricOperations = new TrigonometricOperations();
+    private final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     public void run() throws IOException {
-
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Which operation type to perform: ");
         System.out.println("1. Simple operations");
         System.out.println("2. Trigonometric operations");
         System.out.println("0. Exit");
         int operationNumber = Integer.parseInt(reader.readLine());
-        if (operationNumber == 0) return;
-
         switch (operationNumber) {
             case 1:
                 simpleOperationsRun();
@@ -24,6 +21,8 @@ public class Calculator {
             case 2:
                 trigonometricOperationsRun();
                 break;
+            case 0:
+                return;
             default:
                 System.out.println("Operation type is not supported.");
                 break;
@@ -32,8 +31,6 @@ public class Calculator {
     }
 
     public void simpleOperationsRun() throws IOException {
-
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Which operation to perform: ");
         System.out.println("1. Sum");
         System.out.println("2. Subtract");
@@ -66,28 +63,24 @@ public class Calculator {
     }
 
     public void trigonometricOperationsRun() throws IOException {
-
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Which operation to perform: ");
         System.out.println("1. Cos");
         System.out.println("2. Sin");
         System.out.println("0. Back");
         int operationNumber = Integer.parseInt(reader.readLine());
         if (operationNumber == 0) run();
-        System.out.println("Input angle: ");
-        double firstNumber = Double.parseDouble(reader.readLine());
+        System.out.println("Input angle in degrees: ");
+        double angleDegree = Double.parseDouble(reader.readLine());
         switch (operationNumber) {
             case 1:
-                System.out.println(trigonometricOperations.cos(firstNumber));
+                System.out.println(trigonometricOperations.cos(angleDegree));
                 break;
             case 2:
-                System.out.println(trigonometricOperations.sin(firstNumber));
+                System.out.println(trigonometricOperations.sin(angleDegree));
                 break;
             default:
                 System.out.println("Operation number is not supported.");
                 break;
         }
     }
-
-
 }

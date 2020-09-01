@@ -1,10 +1,10 @@
 public class TrigonometricOperations {
 
-    public double cos(double number) {
-        return Math.cos(number);
+    public double cos(double angleDegree) {
+        return Math.cos(Math.toRadians(angleDegree));
     }
 
-    public double sin(double number) {
-        return Math.sin(number);
+    public double sin(double angleDegree) {
+        return Math.sin(Math.toRadians(angleDegree));
     }
 }
