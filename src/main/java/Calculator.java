@@ -16,10 +16,10 @@ public class Calculator {
         int operationNumber = Integer.parseInt(reader.readLine());
         switch (operationNumber) {
             case 1:
-                simpleOperationsRun();
+                runSimpleOperations();
                 break;
             case 2:
-                trigonometricOperationsRun();
+                runTrigonometricOperations();
                 break;
             case 0:
                 return;
@@ -30,7 +30,7 @@ public class Calculator {
         run();
     }
 
-    public void simpleOperationsRun() throws IOException {
+    public void runSimpleOperations() throws IOException {
         System.out.println("Which operation to perform: ");
         System.out.println("1. Sum");
         System.out.println("2. Subtract");
@@ -62,7 +62,7 @@ public class Calculator {
         }
     }
 
-    public void trigonometricOperationsRun() throws IOException {
+    public void runTrigonometricOperations() throws IOException {
         System.out.println("Which operation to perform: ");
         System.out.println("1. Cos");
         System.out.println("2. Sin");
