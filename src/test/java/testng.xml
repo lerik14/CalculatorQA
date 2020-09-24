@@ -1,0 +1,41 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Quadratic Equation tests">
+
+    <test name="Calculating discriminant Tests">
+        <groups>
+            <run>
+                <include name="discriminant tests" />
+            </run>
+        </groups>
+
+        <classes>
+            <class name="QuadraticEquationTests"/>
+        </classes>
+    </test>
+
+    <test name="Calculating roots tests">
+        <groups>
+            <run>
+                <include name="root tests" />
+            </run>
+        </groups>
+
+        <classes>
+            <class name="QuadraticEquationTests"/>
+        </classes>
+    </test>
+
+    <test name="Calculating quadratic equation tests">
+        <groups>
+            <run>
+                <include name="quadratic equation tests" />
+            </run>
+        </groups>
+
+        <classes>
+            <class name="QuadraticEquationTests"/>
+        </classes>
+    </test>
+
+</suite>

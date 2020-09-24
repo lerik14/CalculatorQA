@@ -95,7 +95,7 @@ public class Calculator {
         double secondCoef = Double.parseDouble(reader.readLine());
         System.out.println("Enter free coefficient");
         double freeCoef = Double.parseDouble(reader.readLine());
-        quadraticEquation.run(firstCoef, secondCoef, freeCoef);
+        System.out.println(quadraticEquation.run(firstCoef, secondCoef, freeCoef));
         run();
     }
 }
