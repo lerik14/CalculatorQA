@@ -1,6 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-
-<suite name="Quadratic Equation tests">
+<suite name="Quadratic Equation tests" parallel="tests" thread-count="10">
 
     <test name="Calculating discriminant Tests">
         <groups>
