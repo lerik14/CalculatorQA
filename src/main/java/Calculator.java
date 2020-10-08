@@ -6,12 +6,14 @@ public class Calculator {
 
     private final SimpleOperations simpleOperations = new SimpleOperations();
     private final TrigonometricOperations trigonometricOperations = new TrigonometricOperations();
+    private final QuadraticEquation quadraticEquation = new QuadraticEquation();
     private final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     public void run() throws IOException {
         System.out.println("Which operation type to perform: ");
         System.out.println("1. Simple operations");
         System.out.println("2. Trigonometric operations");
+        System.out.println("3. Quadratic equation");
         System.out.println("0. Exit");
         int operationNumber = Integer.parseInt(reader.readLine());
         switch (operationNumber) {
@@ -21,6 +23,8 @@ public class Calculator {
             case 2:
                 runTrigonometricOperations();
                 break;
+            case 3:
+                runQuadraticEquation();
             case 0:
                 return;
             default:
@@ -82,5 +86,16 @@ public class Calculator {
                 System.out.println("Operation number is not supported.");
                 break;
         }
+    }
+
+    public void runQuadraticEquation() throws IOException {
+        System.out.println("Enter coefficient placed before x^2");
+        double firstCoef = Double.parseDouble(reader.readLine());
+        System.out.println("Enter coefficient placed before x");
+        double secondCoef = Double.parseDouble(reader.readLine());
+        System.out.println("Enter free coefficient");
+        double freeCoef = Double.parseDouble(reader.readLine());
+        System.out.println(quadraticEquation.run(firstCoef, secondCoef, freeCoef));
+        run();
     }
 }
